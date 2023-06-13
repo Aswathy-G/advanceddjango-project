@@ -1,13 +1,17 @@
 from django.shortcuts import render
+from django.urls import reverse
+from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, PageNotAnInteger,EmptyPage
-
+from web.forms import ProductForm
 
 from web.models import Product
 
 @login_required(login_url="/users/login")
 def index(request):
     products = Product.objects.filter(is_deleted=False,is_edit=False)
+    
+
     instances = Paginator(products,6)
     page = request.GET.get('page',1)
     try:
@@ -18,7 +22,34 @@ def index(request):
         instances = instances.page(instances.num_pages)
     context={
         "title":"HomePage",
-        "instances" : instances,
-         
+        "instances" : instances    
     }
     return render(request,'web/index.html',context=context)
+
+
+def create_product(request):
+    # print("first")
+    if request.method == 'POST':
+        # print("second")
+        form = ProductForm(request.POST,request.FILES)
+        
+
+        if form.is_valid():
+            # print("hai")
+            form.save()
+            # return redirect('web/index.html')  # Redirect to the product list page
+            return HttpResponseRedirect(reverse('web:index'))
+    else:
+        form = ProductForm()
+
+    return render(request, 'web/create.html', {'form': form})
+
+
+
+
+
+
+
+
+
+

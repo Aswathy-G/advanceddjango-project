@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8" />
+        <title>Blog Post | Create your blog</title>
+        <link
+            rel="stylesheet"
+            href="{% static 'css/style.css' %}" type="text/css"
+         
+        />
+        <!-- <link
+        rel="stylesheet"
+        href="./css/ck-editor.css"
+        type="text/css"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/icons/blog-logo.svg"
+        />      -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:image" content="" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <!-- <script src="./js/jquery-3.6.0.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="./js/script.js"></script>
+        <script src="./js/ckeditor.js"></script> -->
+    </head>
+    <body> 
+        <section id="edit-post-home">
+            <header>
+                <section class="wrapper">
+                    
+                    <div class="left">
+                        <a href="./index.html">
+                            <h1>products</h1>
+                         </a>
+    
+                    </div>
+    
+                        <h1 class="right">
+                           {% if request.user.is_authenticated %}
+                            <a href="{% url 'users:logout' %}">Logout</a>
+                            {% else %}
+                             <a href="{% url 'users:login' %}">Login</a>
+                            {% endif %} 
+                        </h1>
+                </section>
+                        
+            </header> 
+                <section class="spotlight">
+                    <h3>Create new post</h3>
+                    <form action="" method="post" enctype="multipart/form-data" class="redirect">
+                        {% csrf_token %}
+                        
+                    
+                            <div class="form-field">
+                                
+                                <label for="{{form.title.id_for_label}}" class="subhead" >
+                                    {{form.title.label}}
+                                </label>
+                                {{form.title}}
+                                <!-- <input type="text" name="title" class="input" maxlength="255" required id="id_title"> -->
+                               
+                            </div>
+                            
+                              
+                            <div class="form-field">
+                                <!-- {{form.description}} -->
+                                <label  for="{{form.description.id_for_label}}"class="subhead">
+                                    {{form.description.label}}   
+                                </label>
+                                {{form.description}}
+                               
+
+                            </div>  
+                                <!-- <input type="text" name="title" class="input" maxlength="255" required id="id_title"> -->
+                           
+                                                     
+                                <!-- <div class="description"> </div> -->
+                                    <!-- <div class="editor" data-field-id="id_description" style="display: inline-block;"></div> -->
+                                        <!-- <textarea cols="40" id="id_description" name="description" rows="10" required data-processed="0" >Hello</textarea> -->
+                                    
+                               
+                            
+                            <div class="form-field">
+                                <!-- {{form.price}} -->
+
+                                <label class="subhead" for="{{form.price.id_label_for_label}}">
+                                    {{form.price.label}}  
+                                </label>
+                                {{form.price}}
+                                <!-- <input type="text" name="title" class="input" maxlength="255" required id="id_title"> -->
+                               
+                            </div>
+                                <!-- <textarea name="short_description" cols="40" rows="10" class="input" required id="id_short_description">
+                                Hello</textarea> -->
+                           
+                            <!-- <div class="form-field">
+                                <label class="subheads" for="id_tags">
+                                    Tags (Comma seperated)
+                                </label>
+                                <input type="text" name="tags"  class="input" required id="id_tags">
+                            </div> -->
+                            <!-- <div class="form-field">
+                                <label for="id_time_to_read" class="subheads" >
+                                    Time to read
+                                </label>
+                                <input type="text" name="time_to_read" value="8 min" class="input" maxlength="128" required id="id_time_to_read">
+                            </div> -->
+                            <div class="form-field">
+                                <label for="{{form_image.id_for_label}}" class="subhead" >
+                                    {{form.image.label}} 
+                                </label>
+                                {{form.image}}
+                                
+                            </div>
+                                <!-- <input type="file" name="featured_image" accept="image/*" required id="id_featured_image">
+                            </div> -->
+                            <!-- <div class="form-field"></div> -->
+                                <!-- <label class="checkbox">
+                                    <input type="checkbox" name="is_draft" id="id_is_draft">
+                                    Is draft
+                                </label> -->
+                            
+                            <div class="form-field">
+                                <input type="submit" value="Submit" />
+                            </div>
+                    </form>
+                    
+                </section>
+            </section>
+        </section>
+    </body>
+    </html>
+        <!-- <script src="/static/ckeditor/ckeditor-init.js" data-ckeditor-basepath="/static/ckeditor/ckeditor/" id="ckeditor-init-script"></script> -->
+        <!-- <script src="./js/ckeditor.js"></script> -->
+        <!-- <script>ClassicEditor
+            .create( document.querySelector( '.editor' ), {
+                
+                licenseKey: '',
+                
+                
+                
+            } )
+            .then( editor => {
+                window.editor = editor;
+        
+                
+                
+                
+            } )
+            .catch( error => {
+                console.error( 'Oops, something went wrong!' );
+                console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
+                console.warn( 'Build id: fbn1rnj89y5k-nohdljl880ze' );
+                console.error( error );
+            } );
+        </script> -->
+ 
