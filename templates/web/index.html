@@ -31,5 +31,158 @@
         </h1>
       </section>
     </header>
+    <section class="spotlight">
+            
+        <div class="all-posts">
+            
+            <div class="post-section">
+               
+                <ul class="posts">
+                {% for product in instances %}
+                    <li>
+                            <div class="product-image">
+                                <img
+                                    src="{{product.image.url}}"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="details">
+                                <div class="data">
+                                    <h4 class="name">{{product.title}}</h4>
+                                    <div class="round"></div>
+                                    <span>{{product.price}}</span>
+                                </div>
+                                
+                                <p class="description">
+                                 {{product.description}}
+                                </p>
+                            </div>
+                       
+                    </li>
+                    {% endfor %}             
+                   
+                </ul>
+            </div>
+            <div class="filter-section" id="hamburger-menu">
+                <form action="">
+                    <input type="text" name="q" placeholder="Search anything..." />
+                    
+                    <p class="filter-head">Category</p>
+                    <div class="filter">
+                        
+                        
+                        <label class="checkbox">
+                            <input type="checkbox"value="" name="category" />
+                            <span class="label">fff</span>
+                        </label>
+                        
+                    </div>
+                    <!-- <p class="filter-head">Brands</p>
+                    <div class="filter">
+                        
+                        <label class="checkbox">
+                            <input type="checkbox" name="category" />
+                            <span class="label">technology</span>
+                        </label>
+                        
+                        <label class="checkbox">
+                            <input type="checkbox" name="category" />
+                            <span class="label">programming</span>
+                        </label>
+                        
+                        <label class="checkbox">
+                            <input type="checkbox" name="category" />
+                            <span class="label">coding</span>
+                        </label>
+                        
+                        <label class="checkbox">
+                            <input type="checkbox"name="category" />
+                            <span class="label">government</span>
+                        </label>
+                        
+                        <label class="checkbox">
+                            <input type="checkbox"name="category" />
+                            <span class="label">data-science</span>
+                        </label>
+                        
+                    </div> -->
+                    <p class="filter-head">Price</p>
+                    <div class="filter">
+                        
+                        <!-- <label class="checkbox">
+                            <input type="checkbox" name="category" />
+                            <span class="label">technology</span>
+                        </label>
+                        
+                        <label class="checkbox">
+                            <input type="checkbox" name="category" />
+                            <span class="label">programming</span>
+                        </label> -->
+                        
+                        <label class="checkbox">
+                            <input type="checkbox" name="category" />
+                            <span class="label">coding</span>
+                        </label>
+                        
+                        <label class="checkbox">
+                            <input type="checkbox"name="category" />
+                            <span class="label">government</span>
+                        </label>
+                        
+                        <label class="checkbox">
+                            <input type="checkbox"name="category" />
+                            <span class="label">data-science</span>
+                        </label>
+                        
+                    </div>
+                   
+                    <input type="submit" value="Filter" />
+                </form>
+            </div>
+        </div>
+        {% if instances.has_other_pages %}
+        
+        <div class="pagination">
+            {% if instances.has_previous %}
+            <a href="?page={{instances.previous_page_number}}" class="prev">
+                Previous
+            </a>
+        
+            {% else %}
+            <a div class="prev disabled">
+                Previous
+            </a>
+            {% endif %}
+            <div class="pages">
+                {% for i in instances.paginator.page_range %}
+                  {% if instances.numer == i %}
+                  <span class="active"> {{i}} </span>
+                  {% else %}
+                   <a href="?page={{i}}"> {{i}} </a>
+                   {% endif %}
+                {% endfor %}
+               
+            </div>
+            {% if instances.has_next %}
+            <a href="?page={{instances.next_page_number}}" class="next">
+                Next
+                <!-- <span class="arrow">
+                    <img
+                        src="./images/icons/arrow.svg"
+                        alt="Arrow"
+                    />
+                </span> -->
+            </a>
+            {% else %}
+            <a div class="next disabled">
+                Next
+            </a>
+            {% endif %}
+
+        </div>
+        {% endif %}
+
+    </section>
+
   </body>
 </html>
