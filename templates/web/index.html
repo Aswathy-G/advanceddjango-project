@@ -71,12 +71,12 @@
                     
                     <p class="filter-head">Category</p>
                     <div class="filter">
-                        
-                        
+                        {% for category in categories %}
                         <label class="checkbox">
-                            <input type="checkbox"value="" name="category" />
-                            <span class="label">fff</span>
+                            <input type="checkbox"value="{{category.id}}" name="category" />
+                            <span class="label">{{category.title}}</span>
                         </label>
+                        {% endfor %}
                         
                     </div>
                     <!-- <p class="filter-head">Brands</p>

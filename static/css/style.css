@@ -210,13 +210,14 @@ section.spotlight div.all-posts {
   margin-bottom: 8%;
   margin-top: 14%;
   border-radius: 8px;
+  margin-left: -20%;
 }
 .spotlight div.all-posts div.filter-section form div.filter {
   /* display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   width: 40%; */
-  margin-left: 20%;
+  /* margin-left: 20%; */
   padding: 0 0 0 10%;
   margin-bottom: 5%;
   /* margin-top: 5%; */
@@ -226,7 +227,7 @@ section.spotlight div.all-posts {
   color: #5e5e5e;
   font-weight: 700;
   margin-bottom: 5%;
-  margin-left: 10%;
+  margin-left: -18%;
 }
 /* .spotlight 
 div.all-posts 

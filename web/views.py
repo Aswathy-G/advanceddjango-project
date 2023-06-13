@@ -5,12 +5,18 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, PageNotAnInteger,EmptyPage
 from web.forms import ProductForm
 
-from web.models import Product
+from web.models import Product,Category
 
 @login_required(login_url="/users/login")
 def index(request):
     products = Product.objects.filter(is_deleted=False,is_edit=False)
+    categorys = Category.objects.all()
+
+    q = request.GET.get('q')
+    if q:
+        products = products.filter(title__istartswith=q)
     
+
 
     instances = Paginator(products,6)
     page = request.GET.get('page',1)
@@ -22,7 +28,8 @@ def index(request):
         instances = instances.page(instances.num_pages)
     context={
         "title":"HomePage",
-        "instances" : instances    
+        "instances" : instances,
+        "categories" :categorys   
     }
     return render(request,'web/index.html',context=context)
 
