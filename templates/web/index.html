@@ -38,28 +38,31 @@
             <div class="post-section">
                
                 <ul class="posts">
-                {% for product in instances %}
-                    <li>
+                    {% for products in instances %}
+                
+                         <li>
                             <div class="product-image">
                                 <img
-                                    src="{{product.image.url}}"
+                                    src="{{products.image.url}}"
                                     alt=""
                                 />
                             </div>
                             <div class="details">
                                 <div class="data">
-                                    <h4 class="name">{{product.title}}</h4>
+                                    <h4 class="name">{{products.title}}</h4>
                                     <div class="round"></div>
-                                    <span>{{product.price}}</span>
+                                    <span>{{products.price}}</span>
                                 </div>
                                 
                                 <p class="description">
-                                 {{product.description}}
+                                    {{products.description}}
+                                 
                                 </p>
                             </div>
                        
-                    </li>
-                    {% endfor %}             
+                         </li>
+                    {% endfor %}
+                                
                    
                 </ul>
             </div>

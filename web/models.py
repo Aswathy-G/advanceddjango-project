@@ -12,12 +12,11 @@ class Category(models.Model):
         return self.title
 
 class Product(models.Model):
-    image = models.ImageField(upload_to="products/images")
+    image = models.ImageField(upload_to="products/image")
     title = models.CharField(max_length=255)
     categories = models.ManyToManyField("web.category")
     description = models.TextField()
     price = models.CharField(max_length=255)
-
     is_deleted = models.BooleanField(default = False)
     is_edit = models.BooleanField(default = False)
     
