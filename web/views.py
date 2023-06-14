@@ -1,6 +1,8 @@
-from django.shortcuts import render, redirect,get_object_or_404
+import json
+
+from django.shortcuts import render,get_object_or_404
 from django.urls import reverse
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect,HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, PageNotAnInteger,EmptyPage
 from web.forms import ProductForm
@@ -51,15 +53,19 @@ def create_product(request):
 
     return render(request, 'web/create.html', {'form': form})
 
-def delete_product(request, pk):
-    product = get_object_or_404(Product, pk=pk)
 
-    if request.method == 'POST':
-        # Confirm deletion
-        product.delete()
-        return redirect('web/index.html', pk = product.pk)  # Redirect to the product list page
+@login_required(login_url="/users/login/")
+def deleted_product(request,id):
+    instance = get_object_or_404(Product,id=id)
+    instance.is_deleted = True
+    instance.save()
 
-    # return redirect('product_detail', pk=product.pk)
+    response_data = {
+        "title" : "Successfully deleted",
+        "message" : "Post deleted successfully",
+        "status" : "success"
+    }
+    return HttpResponse(json.dumps(response_data),content_type="application/json")
 
 
 

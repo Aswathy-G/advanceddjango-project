@@ -5,5 +5,5 @@ admin.site.register(Category)
 
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display =  ("title","description")
+    list_display =  ("id","title","description")
 admin.site.register(Product,ProductAdmin)
