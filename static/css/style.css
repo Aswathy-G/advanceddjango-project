@@ -196,6 +196,50 @@ section.spotlight div.all-posts {
   margin-bottom: 7%;
   font-weight: bold;
 }
+.spotlight div.all-posts.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.spotlight div.all-posts div.post-section ul.posts div.buttons a {
+  display: inline-block;
+  margin-right: 10px;
+  text-decoration: none;
+  color: #000;
+  padding: 5px;
+}
+
+.spotlight div.all-posts div.post-section ul.posts div.buttons a.danger  {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  margin-left: 36%;
+}
+
+.spotlight div.all-posts div.post-section ul.posts div.buttons a.danger img {
+  background-color: olivedrab;
+  color: #fff;
+  display: block;
+  width: 25px;
+}
+
+.spotlight div.all-posts div.post-section ul.posts div.buttons a.warning{
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  
+  
+
+}
+
+.spotlight div.all-posts div.post-section ul.posts div.buttons a.warning img {
+  background-color: olivedrab;
+  color: #000;
+  display: block;
+  width: 25px;
+}
 
 .spotlight div.all-posts div.filter-section form {
   width: 100%;
