@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect,get_object_or_404
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
@@ -50,6 +50,17 @@ def create_product(request):
         form = ProductForm()
 
     return render(request, 'web/create.html', {'form': form})
+
+def delete_product(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+
+    if request.method == 'POST':
+        # Confirm deletion
+        product.delete()
+        return redirect('web/index.html', pk = product.pk)  # Redirect to the product list page
+
+    # return redirect('product_detail', pk=product.pk)
+
 
 
 
