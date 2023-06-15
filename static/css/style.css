@@ -101,7 +101,7 @@ header {
 header section.wrapper {
   display: flex;
   justify-content: space-between;
-  margin-top: 16px;
+  margin-top: 11px;
   align-items: center;
 }
 header section.wrapper div.left h1 {
@@ -441,7 +441,7 @@ div.filter-section
 }
 .spotlight div.all-posts div.filter-section form input[type="submit"] {
   background-color: #5aab7b;
-  width: 50%;
+  width: 58%;
   padding: 10px;
   font-size: 20px;
   font-weight: 900;
