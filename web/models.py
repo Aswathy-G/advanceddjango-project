@@ -7,7 +7,7 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = "categories"
-        
+
 
     def __str__ (self):
         return self.title
@@ -20,6 +20,8 @@ class Product(models.Model):
     price = models.CharField(max_length=255)
     is_deleted = models.BooleanField(default = False)
     is_edit = models.BooleanField(default = False)
+    short_description = models.TextField()
+
 
 
     def __str__ (self):

@@ -12,48 +12,24 @@
                         <h3 class="title">
                             {{instance.title}}
                         </h3>
-                        <p class="description">
-                        {{instance.description}}
-                        </p>
                         <div class="post-image">
                             <img src="{{instance.image.url}}" alt="" >
                         </div>
-                        <div class="details">
-                            <span class="brand">
-                                <p class="name">
-                                    Maybelline
-                                </p>
-                            </span>
-                            <span class="price">
-                                <p class="name">
-                                   {{instance.price}}
-                                </p>
-                            </span>
-                            <ul class="social">
-                                <li class="social-media">
-                                    <a target="_blank" href="#">
-                                        <img src="{% static 'image/twitter.svg' %}" alt="" />
-                                    </a>
-                                </li>
-        
-                                <li class="social-media">
-                                    <a target="_blank" href="#">
-                                        <img src="{% static 'image/facebook.svg' %}" alt="" />
-                                    </a>
-                                </li>
-                            </ul>
+                        <span class="middle">
+                        <div class="description">
+                        {{instance.description}}
                         </div>
-                        <p class="detailed-description">
-                            <p>Foundation covers skin blemishes, providing a smoother finish and a healthy glow. 
-                               One with natural coverage will improve your skin tone and leave you with an even complexion. 
-                               Ingredients included in some quality foundations also act to actively improve the underlying skin tone, 
-                               increasing your natural radiance.
-                            </p>
-                
+                        <div class="name">
+                            {{instance.price}}
+                        </div>
+                        <div class="short-description">
+                            {{instance.short_description}}
+
+                        </div>
+                        </span>
                     </div>
                 </div>             
             </section>
         </section>
-
-
+    </section>
     {% endblock %}
