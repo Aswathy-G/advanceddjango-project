@@ -1,0 +1,19 @@
+<header>
+    <section class="wrapper">
+        <div class="left">
+            <a href="./index.html">
+                <h1>products</h1>
+            </a>
+        </div>
+           <h1 class="right">
+           {% if request.user.is_authenticated %}
+           <a href="{% url 'web:create_product' %}">
+            Add  Products</a>
+            <a href="{% url 'users:logout' %}">Logout</a>
+            {% else %}
+             <a href="{% url 'users:login' %}">Login</a>
+            {% endif %} 
+           </h1>
+    </section>            
+</header>
+  
