@@ -68,6 +68,26 @@ def deleted_product(request,id):
     }
     return HttpResponse(json.dumps(response_data),content_type="application/json")
 
+@login_required(login_url="/users/login/")
+def edit_product(request,id):
+    instance = get_object_or_404(Product,id=id)
+    # print("first")
+    if request.method == 'POST':
+        # print("second")
+        form = ProductForm(request.POST,request.FILES,instance=instance)
+        
+
+        if form.is_valid():
+            instance = form.save(commit=False)
+            # print("hai")
+            instance.save()
+            # return redirect('web/index.html')  # Redirect to the product list page
+            return HttpResponseRedirect(reverse('web:index'))
+    else:
+        form = ProductForm(instance=instance)
+
+    return render(request, 'web/create.html', {'form': form})
+
 
 
 

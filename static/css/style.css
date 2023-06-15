@@ -203,7 +203,6 @@ section.spotlight div.all-posts {
   align-items: center;
 }
 
-
 .spotlight div.all-posts div.post-section ul.posts div.buttons a {
   display: inline-block;
   margin-right: 10px;
@@ -212,7 +211,7 @@ section.spotlight div.all-posts {
   padding: 5px;
 }
 
-.spotlight div.all-posts div.post-section ul.posts div.buttons a.danger  {
+.spotlight div.all-posts div.post-section ul.posts div.buttons a.danger {
   width: 30px;
   height: 30px;
   vertical-align: middle;
@@ -226,13 +225,10 @@ section.spotlight div.all-posts {
   width: 25px;
 }
 
-.spotlight div.all-posts div.post-section ul.posts div.buttons a.warning{
+.spotlight div.all-posts div.post-section ul.posts div.buttons a.warning {
   width: 30px;
   height: 30px;
   vertical-align: middle;
-  
-  
-
 }
 
 .spotlight div.all-posts div.post-section ul.posts div.buttons a.warning img {
@@ -744,9 +740,9 @@ form div.form-field .submit{
   margin-left: 80%;
 }
 .spotlight form input[type="file"] {
-  width: 30%;
+  /* width: 30%;
   padding: 4%;
-  margin-right: 36%;
+  margin-right: 36%; */
 }
 /* #edit-post-home section.spotlight 
 form label {
