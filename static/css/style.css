@@ -142,7 +142,7 @@ section.spotlight div.all-posts {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-top: 1%;
+  margin-top: -4%;
 }
 .spotlight div.all-posts ul.posts li {
   width: 31%;
@@ -236,8 +236,8 @@ section.spotlight div.all-posts {
   height: 50px;
   font-size: 16px;
   font-weight: 700;
-  margin-bottom: 8%;
-  margin-top: 14%;
+  /* margin-bottom: 8%; */
+  margin-top: -10%;
   border-radius: 8px;
   margin-left: -20%;
 }
@@ -317,12 +317,12 @@ section.spotlight div.all-posts {
   margin-left: 21%;
 }
 div.pagination {
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 2px solid #f5f5f5;
-  padding-top: 20px;
+  /* border-top: 2px solid #f5f5f5;
+  padding-top: 20px; */
 }
 div.pagination a.prev {
   display: flex;
@@ -452,5 +452,55 @@ div.pagination div.pages a:hover {
   cursor: pointer;
   margin-left: 80%;
 }
+.single-page-spotlight{
 
+}
+.post-section {
+
+}
+.title {
+  font-size: 25px;
+  margin-top: 30px;
+}
+.description {
+  font-size: 21px;
+  margin: 20px;
+}
+.post-image {
+  width: 100%;
+  }
+.post-image img {
+  width: 40%;
+  /* height: 10%; */
+  display: block;
+}
+.brand {
+  font-size: 16px;
+}
+.price {
+  font-size: 15px;
+}
+
+
+.social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.social-media {
+  width: 30px;
+  height: 10px;
+}
+
+.social-media img {
+  width: 30px;
+  height: 10px;
+}
+
+
+.detailed-description {
+  font-size: 15px;
+}
 

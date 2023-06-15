@@ -11,10 +11,11 @@
                       {% for products in instances %}
                         <li>
                             <div class="product-image">
-                                <img
-                                    src="{{products.image.url}}"
-                                    alt=""
-                                />
+                                <a href="{% url 'web:product' id=products.id %}">
+                                    <img
+                                     src="{{products.image.url}}"
+                                     alt=""/>
+                                </a>
                             </div>
                             <div class="buttons">
                                 <a 

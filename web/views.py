@@ -91,6 +91,15 @@ def edit_product(request,id):
     return render(request, 'web/create.html', {'form': form})
 
 
+def product(request,id):
+    instance = get_object_or_404(Product.objects.filter(id=id))
+    context = {
+        "instance" : instance
+        
+    }
+    return render(request, 'web/post.html',context=context)
+
+
 
 
 
