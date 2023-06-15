@@ -101,12 +101,13 @@ header {
 header section.wrapper {
   display: flex;
   justify-content: space-between;
-  margin-top: 9px;
+  margin-top: 16px;
+  align-items: center;
 }
 header section.wrapper div.left h1 {
   font-size: 27px;
   font-weight: 900;
-  margin-top: -15px;
+  /* margin-top: -15px; */
 }
 header section.wrapper h1.right {
   /* width: 50%; */

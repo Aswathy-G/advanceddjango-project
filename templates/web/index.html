@@ -56,7 +56,7 @@
 
                                     <img src="{% static 'image/delete.svg' %}" alt="Delete" />
                                 </a>
-                                <a href="" class="warning">   
+                                <a href="{% url 'web:create_product' %}" class="warning">   
                                     <img src="{% static 'image/pencil.svg' %}" alt="Edit" />
                                 </a>
                                
@@ -74,7 +74,14 @@
                                     {{products.description}}
                                  
                                 </p>
+                              
                             </div>
+                            <div class="bottom">
+                                {% for tag in web.product.category.all %}
+                                <a href="#" class="design">{{tag.title}}</a>
+                                {% endfor %}
+                            </div>
+                          
                        
                          </li>
                     {% endfor %}
@@ -128,30 +135,22 @@
                     <p class="filter-head">Price</p>
                     <div class="filter">
                         
+                        {% for price in prices %}
+                        <label class="checkbox">
+                            <input type="checkbox" name="category" />
+                            <span class="label">{{price.title}}</span>
+                        </label>
+                        {% endfor %}
+                        
                         <!-- <label class="checkbox">
-                            <input type="checkbox" name="category" />
-                            <span class="label">technology</span>
+                            <input type="checkbox"name="category" />
+                            <span class="label">300-500</span>
                         </label>
                         
                         <label class="checkbox">
-                            <input type="checkbox" name="category" />
-                            <span class="label">programming</span>
+                            <input type="checkbox"name="category" />
+                            <span class="label">500-700</span>
                         </label> -->
-                        
-                        <label class="checkbox">
-                            <input type="checkbox" name="category" />
-                            <span class="label">coding</span>
-                        </label>
-                        
-                        <label class="checkbox">
-                            <input type="checkbox"name="category" />
-                            <span class="label">government</span>
-                        </label>
-                        
-                        <label class="checkbox">
-                            <input type="checkbox"name="category" />
-                            <span class="label">data-science</span>
-                        </label>
                         
                     </div>
                    

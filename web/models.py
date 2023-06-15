@@ -19,8 +19,13 @@ class Product(models.Model):
     price = models.CharField(max_length=255)
     is_deleted = models.BooleanField(default = False)
     is_edit = models.BooleanField(default = False)
-    
-    
+
+
+    def __str__ (self):
+        return self.title
+
+class Price(models.Model):
+    title = models.CharField(max_length=255)
 
     def __str__ (self):
         return self.title
