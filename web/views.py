@@ -6,6 +6,7 @@ from django.http import HttpResponseRedirect,HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, PageNotAnInteger,EmptyPage
 from web.forms import ProductForm
+from main.decorators import allow_self
 
 from web.models import Product,Category,Price
 
@@ -38,17 +39,15 @@ def index(request):
 
 
 def create_product(request):
-    # print("first")
     if request.method == 'POST':
-        # print("second")
         form = ProductForm(request.POST,request.FILES)
-        
-
         if form.is_valid():
-            # print("hai")
             form.save()
-            # return redirect('web/index.html')  # Redirect to the product list page
-            return HttpResponseRedirect(reverse('web:index'))
+            context={
+                "title":"create page"
+
+            }
+            return HttpResponseRedirect(reverse('web:index'),context=context)
     else:
         form = ProductForm()
 
@@ -56,6 +55,7 @@ def create_product(request):
 
 
 @login_required(login_url="/users/login/")
+@allow_self
 def deleted_product(request,id):
     instance = get_object_or_404(Product,id=id)
     instance.is_deleted = True
@@ -68,7 +68,9 @@ def deleted_product(request,id):
     }
     return HttpResponse(json.dumps(response_data),content_type="application/json")
 
+
 @login_required(login_url="/users/login/")
+@allow_self
 def edit_product(request,id):
     instance = get_object_or_404(Product,id=id)
     # print("first")
@@ -84,7 +86,7 @@ def edit_product(request,id):
             # return redirect('web/index.html')  # Redirect to the product list page
             return HttpResponseRedirect(reverse('web:index'))
     else:
-        form = ProductForm(instance=instance)
+        form = ProductForm(instance=instance)   
 
     return render(request, 'web/create.html', {'form': form})
 

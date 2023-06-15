@@ -74,8 +74,6 @@ def signup(request):
                 "form" : form,
             }
             return render(request,"users/signup.html",context=context)
-
-  
     else:
         form = UserForm()
         context = {
