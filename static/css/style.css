@@ -91,7 +91,7 @@ br.clear {
 }
 img {
   display: block;
-  width: 100%;
+  width: 55%;
   height: 100%;
 }
 header {
@@ -150,7 +150,7 @@ section.spotlight div.all-posts {
   margin-bottom: 0;
 }
 .spotlight div.all-posts ul.posts li div.product-image {
-  width: 60%;
+  width: 100%;
   display: block;
   margin-bottom: 10px;
 }
@@ -160,10 +160,11 @@ section.spotlight div.all-posts {
   margin-bottom: 4%;
 }
 .spotlight div.all-posts ul.posts li div.details div.data h4.name {
-  font-size: 18px;
+  font-size: 25px;
   margin-right: 25px;
   color: #5aaa7b;
   font-weight: 700;
+  font-family: "Gordita Bold";
 }
 .spotlight div.all-posts ul.posts li div.details div.data div.round {
   background: #5bab7b;
@@ -179,9 +180,10 @@ section.spotlight div.all-posts {
 }
 .spotlight div.all-posts ul.posts li div.details p.description {
   color: orchid;
-  font-size: 18px;
+  font-size: 22px;
   margin-bottom: 7%;
   font-weight: bold;
+  font-family: "Gordita Medium";
 }
 .spotlight div.all-posts.buttons {
   display: flex;
@@ -450,63 +452,10 @@ div.pagination div.pages a:hover {
   cursor: pointer;
   margin-left: 80%;
 }
-/* .single-page-spotlight{
 
-}
-.post-section {
-
-}
-.title {
+span.middle div.short-description {
   font-size: 25px;
-  text-align: center;
-  margin: 30px 0 50px -390px;
-}
-.description {
-  font-size: 21px;
-  margin: 20px;
-  margin-left: -315px;
-} */
-/* .name {
-  margin-left: -500px;
-} */
-/* .post-image {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: -2%;
-
-  } */
-/* .post-image img {
-  width: 40%; */
-/* height: 10%; */
-/* display: block;
-} */
-/* .brand {
-  font-size: 16px;
-} */
-/* .middle {
-  font-size: 15px;
-  text-align: center;
-} */
-
-/* .social {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  
-}
-
-.social-media {
-  width: 30px;
-  height: 10px;
-}
-
-.social-media img {
-  width: 30px;
-  height: 10px;
-} */
-
-.short-description {
-  font-size: 15px;
+  width:51%;
+  margin-top: 2%;
+  font-family: "Gordita Medium";
 }

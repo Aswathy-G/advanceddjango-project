@@ -30,7 +30,7 @@ def index(request):
     except EmptyPage:
         instances = instances.page(instances.num_pages)
     context={
-        "title":"HomePage",
+        "title":"cosmetics",
         "instances" : instances,
         "categories" :categorys,
         "prices" : prices   
@@ -43,11 +43,8 @@ def create_product(request):
         form = ProductForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
-            context={
-                "title":"create page"
-
-            }
-            return HttpResponseRedirect(reverse('web:index'),context=context)
+        
+            return HttpResponseRedirect(reverse('web:index'))
     else:
         form = ProductForm()
 
